@@ -16,3 +16,16 @@ My transition from backend engineering to AI engineering.
 ## Why this matters
 LLM APIs fail often. Production AI systems need retry logic and fallback models.
 This client is the foundation for every AI project I will build.
+
+
+## Day 3 — Structured Output
+
+`src/structured.py` wraps the LLM client to return validated JSON.
+
+Key features:
+- Asks the LLM for JSON matching a schema
+- Strips markdown code fences
+- Retries once with a stricter prompt if parsing fails
+- Returns a dict with `success`, `data`, or `error`
+
+Why this matters: backend code cannot use plain text. Structured output turns the LLM into a real data source.
