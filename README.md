@@ -29,3 +29,17 @@ Key features:
 - Returns a dict with `success`, `data`, or `error`
 
 Why this matters: backend code cannot use plain text. Structured output turns the LLM into a real data source.
+
+## Day 4 — FastAPI Service
+
+`api/main.py` exposes the LLM extraction as a real HTTP API.
+
+### Endpoints
+
+- `GET /health` — service health check
+- `POST /extract` — extract structured JSON from text
+
+### Run it
+
+```bash
+uvicorn api.main:app --reload
