@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from src.structured import StructuredLLM
+from src.config import setup_logging
 
 
 app = FastAPI(
@@ -8,6 +9,8 @@ app = FastAPI(
     description="Extract structured data from text using an LLM.",
     version="0.1.0",
 )
+
+setup_logging() 
 
 # Create the extractor once, when the server starts
 extractor = StructuredLLM()
