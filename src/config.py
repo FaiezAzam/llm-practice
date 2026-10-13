@@ -10,6 +10,8 @@ class Settings(BaseSettings):
     request_timeout: int = 30
     fallback_models: str = "openrouter/free"
     model_config = {"env_file": ".env"}
+    qdrant_url: str
+    qdrant_api_key: str
 
 settings = Settings()
 
@@ -19,4 +21,6 @@ def setup_logging() -> None:
         level=logging.INFO,
         format="%(asctime)s [%(levelname)s] %(name)s: %(message)s"
     )
+
+
 
