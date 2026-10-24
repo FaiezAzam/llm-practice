@@ -13,7 +13,7 @@ def ingest_documents(folder: str) -> list[dict]:
             for chunk in page_chunks:
                 chunks.append({
                     "text": chunk,
-                    "souce": pdf_path.name,
+                    "source": pdf_path.name,
                     "page": page["page"],
                     "chunk_index": len(chunks),
                 })
